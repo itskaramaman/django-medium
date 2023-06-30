@@ -10,11 +10,11 @@ class Category(BaseModel):
         return self.title[:10]
 
 
-class Product(BaseModel):
+class Blog(BaseModel):
     title = models.CharField(max_length=255)
     description = models.TextField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category,blank=True, null=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(Category, blank=True, null=True, on_delete=models.SET_NULL)
 
     def __str__(self) -> str:
         return self.title[:10]
